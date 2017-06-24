@@ -26,3 +26,15 @@ c.execute("INSERT INTO words (date,words,translations,mnemonics) VALUES(?,?,?,?)
 
 conn.commit()
 conn.close()
+
+#create table with id 
+
+import sqlite3
+import datetime
+
+conn = sqlite3.connect('dict.db')
+c = conn.cursor()
+c.execute('''CREATE TABLE words 
+	         (id INTEGER PRIMARY KEY AUTOINCREMENT, date text, words text, translations text, mnemonics text)''')
+conn.commit()
+conn.close()
